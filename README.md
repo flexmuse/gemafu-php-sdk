@@ -1,7 +1,72 @@
+# 客服QQ：106755758
 # 项目说明
+项目地址：http://gemafu.youzhuanshi.com/
+
+Git命令：`git clone https://github.com/flexmuse/gemafu-php-sdk.git`
+
+压缩包下载：https://github.com/flexmuse/gemafu-php-sdk/archive/master.zip
+
+个码付，是一个自由，安全，便捷的微信个人二维码收款平台。能够帮助运营者通过个人微信收款码实现系统全自动收款、入单等工作。
+### 自由
+平台无需任何资质审查、进件，只要您拥有微信号即可收款，实现与企业收款一样的自动化功能。
+### 安全
+完全实时到账，0秒到达您的个人微信号，平台不做任何二清等资金留存，资金绝对安全。
+### 便捷
+大批的第三方服务商为您提供一对一的技术服务，让您的系统快速便捷接入到平台里来。
 # 接入步骤
+接入非常简单，全程均有服务商支持服务。
+
+步骤：平台申请（联系客服，QQ：106755758） -> 根据本文档接入系统 -> 开始使用
 # 基础说明
+### SDK包文件结构
+```
+gemafu-php-sdk
+│   gemafu_config.php   //主配置文件  
+└───pay              //主程序包
+│   │   check.php       //检测订单状态程序
+│   │   pay.php         //下单程序
+│   │   phpqrcode.php   //二维码生成类
+│   │   qrcode.php      //显示二维码组件
+│   └───js          //JS函数包
+│       │   time.js     //计时函数
+└───demo            //demo程序
+    │   notify_url.php  //异步通知接收程序
+    │   pay.php         //下单程序
+    │   success.php     //支付后跳转界面
+```
+### 时序图
+![时序图](https://cdn.flexmuse.com/gemafu/fodder/res/static/img/poe.jpg)
+### 系统前置条件
+1，首先需要获得平台账号，以获得商户号与密钥。
+
+#### 在根目录中的主配置文件上面，替换这两个重要参数。
+```php
+<?php
+header("Content-type: text/html; charset=utf-8");
+ini_set('date.timezone', 'Asia/Shanghai');
+@error_reporting(E_ALL^E_NOTICE);
+//客户支付配置，必填，重要！
+define("GEMAFU_MID", 00000);//替换成你的商户号
+define("SECRET_KEY", "xxxxxxxxxxxxxxxxxxxxxxxxxxx");//替换成你的秘钥
+```
+2，平台中配置好收款账号，请咨询客服，客服会帮助您检测是否完成。
 # 系统下单
+### 请求字段表
+
+### 返回字段表
+
 # 订单查询
+### 请求字段表
+
+### 返回字段表
+
 # 异步通知
+### 请求字段表
+
+### 返回字段表
+
 # 常见问题
+### 请求失败
+### 签名错误
+### 收不到异步通知
+### 掉单
