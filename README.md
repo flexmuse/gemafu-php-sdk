@@ -1,10 +1,10 @@
-# 客服QQ：106755758
+# 微信个人码支付平台客服QQ：106755758
 # 项目说明
-项目地址：http://gemafu.youzhuanshi.com/
+项目地址：[http://gemafu.youzhuanshi.com/](http://gemafu.youzhuanshi.com/)
 
 Git命令：`git clone https://github.com/flexmuse/gemafu-php-sdk.git`
 
-压缩包下载：https://github.com/flexmuse/gemafu-php-sdk/archive/master.zip
+SKD包下载：[https://github.com/flexmuse/gemafu-php-sdk/archive/master.zip](https://github.com/flexmuse/gemafu-php-sdk/archive/master.zip)
 
 个码付，是一个自由，安全，便捷的微信个人二维码收款平台。能够帮助运营者通过个人微信收款码实现系统全自动收款、入单等工作。
 ### 自由
