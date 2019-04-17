@@ -55,7 +55,7 @@ function gemafu_order($paydata){
     }
 
     $url_quer=http_build_query($data);
-    $url="/recharge/pay/pay.php?{$url_quer}";
+    $url="../pay/pay.php?{$url_quer}";
     return $url;
 }
 
