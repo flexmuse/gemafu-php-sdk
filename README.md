@@ -91,6 +91,7 @@ define("SECRET_KEY", "xxxxxxxxxxxxxxxxxxxxxxxxxxx");//替换成你的秘钥
 7|userid|字符串|必填|客户唯一标识
 8|appname|字符串|必填|商户系统应用名称
 9|f_url|字符串|非必填|付款完成后跳转地址
+10|body|字符串|非必填|商户根据自己需要带的数据
 
 ### 返回字段表
 编号|字段名|类型|说明
@@ -137,6 +138,7 @@ define("SECRET_KEY", "xxxxxxxxxxxxxxxxxxxxxxxxxxx");//替换成你的秘钥
 6|appname|字符串|商户系统应用名称
 7|money|数值|客户实际支付金额
 8|f_url|字符串|付款完成后跳转地址
+9|body|字符串|非必填|商户下单时候带的数据
 ### 返回字段表
 body里打印`200`即可，有其他错误正常打印，平台将记录非200信息，以供debug查询。
 # 常见问题
