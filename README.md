@@ -75,6 +75,31 @@ define("SECRET_KEY", "xxxxxxxxxxxxxxxxxxxxxxxxxxx");//替换成你的秘钥
 }
 ```
 2xx的均为正确返回，但是状态不同，唯有200状态下是带有数据返回，其他均会返回一个msg字段，信息就在msg。
+### 签名方式
+参与签名的数据：json里data字段下的所有内容
+
+签名方式：data字段下所有的数据，key进行顺序排序，所有key和value均以字符串形式连接，最后再加上系统密钥，然后md5值为签名
+
+特别注意：字符串连接中间没有任何分隔符什么的；签名就是md5小写，不用转换大写。
+
+代码样例：
+```php
+function pay_sign($paydata){
+    if(!is_array($paydata)){
+        exit("data错误");
+    }
+    $key = SECRET_KEY;//配置文件里你的密钥
+    ksort($paydata);//ksort方式排序即可
+    $res = "";
+    foreach ($paydata as $k => $v) {
+        $res .= $k;
+        $res .= $v;
+    }
+    $res .= $key;//连接时候中间不加任何东西
+    $sign = md5($res);//直接md5即可，不用其他转换
+    return $sign;
+}
+```
 # 系统下单
 ### 调用方式
 订单数据以数组形式在 `./demo/pay.php`里组织好后，程序会自动提交到`./pay/pay.php`，您也可以根据demo里的形式，直接提交到下单程序。
